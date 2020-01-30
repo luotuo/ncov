@@ -157,6 +157,14 @@ export const provinceList = {
     {
       name: '新疆生产建设兵团',
       url: 'http://www.xjhfpc.gov.cn/tzgg_.htm'
+    },
+    {
+      name: '香港',
+      url: 'https://www.chp.gov.hk/sc/features/102465.html'
+    },
+    {
+      name: '澳门',
+      url: 'https://www.ssm.gov.mo/apps1/PreventWuhanInfection/ch.aspx#clg17044'
     }
   ]
 }

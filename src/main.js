@@ -20,3 +20,21 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+var _hmt = _hmt || []
+window._hmt = _hmt; // 修改为window 全局变量
+(function () {
+  var hm = document.createElement("script")
+  hm.src = "https://hm.baidu.com/hm.js?48850c956411827c2d82ee386b6d1185"
+  var s = document.getElementsByTagName("script")[0]
+  s.parentNode.insertBefore(hm, s)
+})()
+
+router.beforeEach((to, from, next) => {
+  if (window._hmt) {
+    if (to.path) {
+      window._hmt.push(['_trackPageview', '/#' + to.fullPath])
+    }
+  }
+  next()
+})
