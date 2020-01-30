@@ -168,3 +168,14 @@ export const provinceList = {
     }
   ]
 }
+
+// 需要变成后台推送式
+export const funnyList = {
+  title: '疫情下的幽默——乐观主义精神',
+  list: [
+    {
+      name: '来看看那些抗击疫情的宣传标语，民间的智慧与幽默尽在其中',
+      url: 'https://baijiahao.baidu.com/s?id=1657067306376459129&wfr=spider&for=pc'
+    }
+  ]
+}

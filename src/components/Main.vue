@@ -8,12 +8,16 @@
       :data="provinceList"
       type="provinceList"
     ></block>
+    <!-- <block
+      :data="funnyList"
+      type="funnyList"
+    ></block> -->
   </div>
 </template>
 
 <script>
 import {
-  provinceList, country
+  provinceList, country, funnyList
 } from '@/db/db'
 import Block from '@/components/Block.vue'
 
@@ -22,7 +26,8 @@ export default {
   data () {
     return {
       provinceList,
-      country
+      country,
+      funnyList
     }
   }
 }

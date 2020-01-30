@@ -1,22 +1,8 @@
 <template>
   <div>
     <el-row>
-      <el-col
-        class="navigation-github"
-        :span="1"
-        :offset="23"
-        :xs="{span:1,offset:22}"
-      >
-        <!-- <a
-          class="github"
-          href="https://github.com/lmjben/front-end-navigation"
-          target="_blank"
-        >
-          <img
-            src="@/assets/github.png"
-            alt="github"
-          />
-        </a> -->
+      <el-col class="navigation-github">
+        <a @click="showIframe">{{ text }}</a>
       </el-col>
     </el-row>
   </div>
@@ -24,7 +10,23 @@
 
 <script>
 export default {
-  methods: {}
+  data () {
+    return {
+      showFlag: false,
+      text: '显示实时疫情'
+    }
+  },
+  methods: {
+    showIframe () {
+      this.showFlag = !this.showFlag
+      if (!this.showFlag) {
+        this.text = '显示实时疫情'
+      } else {
+        this.text = '隐藏实时疫情'
+      }
+      this.$emit('showIframe', this.showFlag)
+    }
+  }
 }
 </script>
 
@@ -34,8 +36,6 @@ export default {
 
   .github {
     display: inline-block;
-    width: 30px;
-    height: 30px;
     vertical-align: middle;
 
     & :hover {

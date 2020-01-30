@@ -2,7 +2,9 @@
   <div>
     <el-container>
       <el-header>
-        <Navigation />
+        <Navigation
+        @showIframe="showIframe($event)"
+        />
       </el-header>
       <el-main ref="main">
         <el-row>
@@ -24,6 +26,9 @@
           </el-col>
         </el-row>
         <div class="white-line"></div>
+        <!-- 实时疫情 -->
+        <iframe v-if="showIframeFlag" id="show-iframe" frameborder="0" scrolling="yes" style="background-color:transparent; position：absolute;width: 100%;
+          height:100%; top: 0;left:0;bottom:0;" :src="url" />
         <el-row>
           <el-col
             :lg="{span: 16, offset: 4}"
@@ -65,11 +70,18 @@ export default {
     return {
       search: '',
       select: '',
-      scrollElement: ''
+      scrollElement: '',
+      showIframeFlag: false,
+      url: 'https://iflow.uc.cn/webview/article/newspecial.html?uc_biz_str=S%3Acustom%7CC%3Aiflow_ncmt&aid=3804775841868884355&cid=100&uc_param_str=lodndseiwifrvesvntgi&sm_article_id=3804775841868884355&uc_h5_page_name=iflowspecial&feiyan=1&feiyan_jump=-3&zzd_from=uc-iflow&dl_type=2&app=uc-iflow&recoid=17286224574374631545&activity=1&activity2=1&pagetype=share'
     }
   },
   mounted () {
     this.scrollElement = this.$refs.main.$el
+  },
+  methods: {
+    showIframe (flag) {
+      this.showIframeFlag = flag
+    }
   }
 }
 </script>

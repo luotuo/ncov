@@ -18,9 +18,10 @@
             :sm="12"
             :md="8"
             :lg="6"
-            v-for="item in data.list"
+            v-for="(item,index) in data.list"
             v-bind:key="item.name"
             class="common-panel-item"
+            v-show="index<num"
           >
             <a
               :href="item.url"
@@ -36,6 +37,7 @@
             </a>
           </el-col>
         </el-row>
+        <el-link v-if="this.data.list.length > 8" class="show-more" @click="showMore" type="info">{{ txt }}</el-link>
       </el-col>
     </el-row>
   </div>
@@ -50,6 +52,25 @@ export default {
     },
     itemHoverStyle () {
       return `${this.type}-hover`
+    }
+  },
+  data () {
+    return {
+      txt: '显示更多...',
+      showMoreFlag: false,
+      num: 8
+    }
+  },
+  methods: {
+    showMore () {
+      this.showMoreFlag = !this.showMoreFlag
+      if (this.showMoreFlag) {
+        this.txt = '隐藏'
+        this.num = this.data.list.length
+      } else {
+        this.txt = '显示更多...'
+        this.num = 8
+      }
     }
   }
 }
@@ -69,7 +90,7 @@ export default {
   @include setBackground(#67c23a);
 }
 
-.standardList {
+.funnyList {
   @include setBackground(#eb2f96);
 }
 
@@ -93,7 +114,7 @@ export default {
   @include setBackground(#67c23a);
 }
 
-.standardList-hover:hover {
+.funnyList-hover:hover {
   @include setBackground(#eb2f96);
 }
 
@@ -137,5 +158,9 @@ export default {
 
 .el-card__body {
   padding: 15px 10px !important;
+}
+.show-more {
+  float: right;
+  margin-right: 8px;
 }
 </style>
