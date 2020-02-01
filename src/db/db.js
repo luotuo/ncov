@@ -32,11 +32,11 @@ export const provinceList = {
   list: [
     {
       name: '北京',
-      url: 'http://wjw.beijing.gov.cn/xwzx_20031/xwfb/'
+      url: 'http://wjw.beijing.gov.cn/wjwh/ztzl/xxgzbd/gzbdyqtb/'
     },
     {
       name: '天津',
-      url: 'http://wsjk.tj.gov.cn/col/col14/index.html'
+      url: 'http://wsjk.tj.gov.cn/col/col87/index.html'
     },
     {
       name: '河北',
@@ -48,15 +48,15 @@ export const provinceList = {
     },
     {
       name: '内蒙古',
-      url: 'http://wjw.nmg.gov.cn/xwzx/xwfb/index.shtml'
+      url: 'http://wjw.nmg.gov.cn/ztlm/2016n/xxgzbdgrdfyyqfk/yqtb/index.shtml'
     },
     {
       name: '辽宁',
-      url: 'http://wsjk.ln.gov.cn/wst_wsjskx/'
+      url: 'http://wsjk.ln.gov.cn/wst_zdzt/xxgzbd/yqtb/'
     },
     {
       name: '吉林',
-      url: 'http://wsjkw.jl.gov.cn/xwzx/xwfb/'
+      url: 'http://www.jl.gov.cn/szfzt/jlzxd/yqtb/'
     },
     {
       name: '黑龙江',
@@ -64,7 +64,7 @@ export const provinceList = {
     },
     {
       name: '上海',
-      url: 'http://wsjkw.sh.gov.cn/xwfb/index.html'
+      url: 'http://wsjkw.sh.gov.cn/yqtb/index.html'
     },
     {
       name: '江苏',
@@ -76,15 +76,15 @@ export const provinceList = {
     },
     {
       name: '安徽',
-      url: 'http://wjw.ah.gov.cn/news_list_450_1.html'
+      url: 'http://wjw.ah.gov.cn/news_list_477_1.html'
     },
     {
       name: '福建',
-      url: 'http://wjw.fujian.gov.cn/xxgk/gzdt/wsjsyw/'
+      url: 'http://wjw.fujian.gov.cn/ztzl/gzbufk/yqtb/'
     },
     {
       name: '江西',
-      url: 'http://hc.jiangxi.gov.cn/xwzx/wjxw/index.shtml'
+      url: 'http://hc.jiangxi.gov.cn/ztxx/xxgzbdgrdfyyqfk/xibd_gzdt/index.shtml'
     },
     {
       name: '山东',
@@ -96,7 +96,7 @@ export const provinceList = {
     },
     {
       name: '湖北',
-      url: 'http://wjw.hubei.gov.cn/fbjd/dtyw/'
+      url: 'http://wjw.hubei.gov.cn/bmdt/ztzl/fkxxgzbdgrfyyq/xxfb/'
     },
     {
       name: '湖南',
@@ -108,7 +108,7 @@ export const provinceList = {
     },
     {
       name: '广西',
-      url: 'http://wsjkw.gxzf.gov.cn/xxgks/yqxx/'
+      url: 'http://wsjkw.gxzf.gov.cn/xxgks/yqxx/ssyqdt/'
     },
     {
       name: '海南',
@@ -144,7 +144,7 @@ export const provinceList = {
     },
     {
       name: '青海',
-      url: 'https://wsjkw.qinghai.gov.cn/zhxw/xwzx/index.html'
+      url: 'https://wsjkw.qinghai.gov.cn/ztbd/yqjk/yqtb/index.html'
     },
     {
       name: '宁夏',
@@ -156,7 +156,7 @@ export const provinceList = {
     },
     {
       name: '新疆生产建设兵团',
-      url: 'http://www.xjhfpc.gov.cn/tzgg_.htm'
+      url: 'http://www.xjhfpc.gov.cn/ztzl/fkxxgzbdfygz/yqtb.htm'
     },
     {
       name: '香港',
