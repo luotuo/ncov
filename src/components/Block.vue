@@ -23,18 +23,22 @@
             class="common-panel-item"
             v-show="index<num"
           >
-            <a
-              :href="item.url"
-              target="_blank"
-              class="common-panel-item-a"
+          <a v-if="item.url && item.url[0] !== '/'" :href="item.url" target="_blank" class="common-panel-item-a">
+          <el-card
+              shadow="always"
+              :class="itemHoverStyle"
             >
-              <el-card
-                shadow="always"
-                :class="itemHoverStyle"
-              >
-                {{item.name}}
-              </el-card>
-            </a>
+              {{item.name}}
+            </el-card>
+          </a>
+          <router-link v-else :to="item.url" class="common-panel-item-a">
+            <el-card
+              shadow="always"
+              :class="itemHoverStyle"
+            >
+              {{item.name}}
+            </el-card>
+          </router-link>
           </el-col>
         </el-row>
         <el-link v-if="this.data.list.length > 8" class="show-more" @click="showMore" type="info">{{ txt }}</el-link>
@@ -98,7 +102,7 @@ export default {
   @include setBackground(#e6a23c);
 }
 
-.blogList {
+.others {
   @include setBackground(#f56c6c);
 }
 
@@ -122,7 +126,7 @@ export default {
   @include setBackground(#e6a23c);
 }
 
-.blogList-hover:hover {
+.others-hover:hover {
   @include setBackground(#f56c6c);
 }
 

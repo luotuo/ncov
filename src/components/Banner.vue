@@ -1,10 +1,32 @@
 <template>
   <div class="banner animated bounce">
     <div class="banner-font">
-      疫情导航
+      {{localTxt}}
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Banner',
+  props: {
+    txt: {
+      type: String,
+      default: '疫情导航'
+    }
+  },
+  data () {
+    return {
+      localTxt: this.txt
+    }
+  },
+  watch: {
+    txt: function (val) {
+      this.localTxt = val
+    }
+  }
+}
+</script>>
 
 <style lang="scss">
 

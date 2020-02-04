@@ -1,5 +1,9 @@
 <template>
   <div>
+     <block
+      :data="toolList"
+      type="toolList" >
+    </block>
     <block
       :data="country"
       type="country"
@@ -8,16 +12,16 @@
       :data="provinceList"
       type="provinceList"
     ></block>
-    <!-- <block
-      :data="funnyList"
-      type="funnyList"
-    ></block> -->
+    <block
+      :data="others"
+      type="others"
+    ></block>
   </div>
 </template>
 
 <script>
 import {
-  provinceList, country, funnyList
+  provinceList, country, funnyList, others
 } from '@/db/db'
 import Block from '@/components/Block.vue'
 
@@ -27,7 +31,21 @@ export default {
     return {
       provinceList,
       country,
-      funnyList
+      funnyList,
+      others,
+      toolList: {
+        title: '本站',
+        list: [
+          {
+            name: '各省数据统计',
+            url: '/statistics'
+          },
+          {
+            name: '疫情下的幽默——乐观主义精神',
+            url: 'https://baijiahao.baidu.com/s?id=1657067306376459129&wfr=spider&for=pc'
+          }
+        ]
+      }
     }
   }
 }

@@ -179,3 +179,13 @@ export const funnyList = {
     }
   ]
 }
+
+export const others = {
+  title: '其他工具',
+  list: [
+    {
+      name: '新型冠状病毒感染的肺炎确诊患者同行程查询工具',
+      url: 'http://2019ncov.nosugartech.com/'
+    }
+  ]
+}
