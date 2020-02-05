@@ -3,6 +3,9 @@
     <div class="banner-font">
       {{localTxt}}
     </div>
+    <div style="color: red;font-size: 25px;">
+      武汉加油！中国加油！
+    </div>
   </div>
 </template>
 

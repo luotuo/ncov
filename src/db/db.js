@@ -186,6 +186,10 @@ export const others = {
     {
       name: '新型冠状病毒感染的肺炎确诊患者同行程查询工具',
       url: 'http://2019ncov.nosugartech.com/'
+    },
+    {
+      name: '疫统计——疫情数据收集统计分析工具',
+      url: 'https://www.ioteams.com/ncov#/login'
     }
   ]
 }

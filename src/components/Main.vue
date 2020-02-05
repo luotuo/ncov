@@ -42,7 +42,7 @@ export default {
           },
           {
             name: '疫情下的幽默——乐观主义精神',
-            url: 'https://baijiahao.baidu.com/s?id=1657067306376459129&wfr=spider&for=pc'
+            url: '/relax'
           }
         ]
       }

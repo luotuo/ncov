@@ -14,6 +14,11 @@ export default new Router({
       path: '/statistics',
       name: 'statistics',
       component: () => import('@/views/statistics')
+    },
+    {
+      path: '/relax',
+      name: 'relax',
+      component: () => import('@/views/relax')
     }
   ]
 })

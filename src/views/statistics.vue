@@ -17,7 +17,7 @@
           </el-col>
         </el-row>
         <div class="white-line"></div>
-        <el-select v-model="dataQuery.region_id" placeholder="请选择您关心的地区" @change="statsChanged" clearable>
+        <el-select v-model="dataQuery.region_id" placeholder="请选择您关心的地区" @change="statsChanged">
           <el-option v-for="item in regionList" :key="item.id" :label="item.name" :value="item.id" />
         </el-select>
         <el-row style="text-align: center">
@@ -68,6 +68,7 @@ import ScrollToTop from '@/components/ScrollToTop.vue'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/title'
+import 'echarts/lib/component/tooltip'
 import { getRegionList, getNcovStats } from '@/api/api'
 
 export default {
@@ -93,6 +94,15 @@ export default {
         renderer: 'canvas'
       },
       newAdd: {
+        noDataLoadingOption: {
+          text: '数据统计中...',
+          effect: 'bubble',
+          effectOption: {
+            effect: {
+              n: 0
+            }
+          }
+        },
         tooltip: {
           trigger: 'axis'
         },
@@ -146,6 +156,15 @@ export default {
         ]
       },
       total: {
+        noDataLoadingOption: {
+          text: '数据统计中...',
+          effect: 'bubble',
+          effectOption: {
+            effect: {
+              n: 0
+            }
+          }
+        },
         tooltip: {
           trigger: 'axis'
         },
@@ -228,34 +247,66 @@ export default {
         const { result } = response
         this.newAdd.xAxis.data = []
         this.total.xAxis.data = []
-        let diag_increase_quantity = []
-        let diag_total_quantity = []
-        let susp_increase_quantity = []
-        let susp_total_quantity = []
-        let recv_increase_quantity = []
-        let recv_total_quantity = []
-        let death_increase_quantity = []
-        let death_total_quantity = []
+        let diagincreaseQuantity = []
+        let diagTotalQuantity = []
+        let suspIncreaseQuantity = []
+        let suspTotalQuantity = []
+        let recvUncreaseQuantity = []
+        let recvTotalQuantity = []
+        let deathIncreaseQuantity = []
+        let deathTotalQuantity = []
         for (const i of result) {
           this.newAdd.xAxis.data.push(i.stat_date)
           this.total.xAxis.data.push(i.stat_date)
-          diag_increase_quantity.push(i.diag_increase_quantity)
-          diag_total_quantity.push(i.diag_total_quantity)
-          susp_increase_quantity.push(i.susp_increase_quantity)
-          susp_total_quantity.push(i.susp_total_quantity)
-          recv_increase_quantity.push(i.recv_increase_quantity)
-          recv_total_quantity.push(i.recv_total_quantity)
-          death_increase_quantity.push(i.death_increase_quantity)
-          death_total_quantity.push(i.death_total_quantity)
+          if (i.diag_increase_quantity === '-1') {
+            diagincreaseQuantity.push('-')
+          } else {
+            diagincreaseQuantity.push(i.diag_increase_quantity)
+          }
+          if (i.diag_total_quantity === '-1') {
+            diagTotalQuantity.push('-')
+          } else {
+            diagTotalQuantity.push(i.diag_total_quantity)
+          }
+          if (i.susp_increase_quantity === '-1') {
+            suspIncreaseQuantity.push('-')
+          } else {
+            suspIncreaseQuantity.push(i.susp_increase_quantity)
+          }
+          if (i.susp_total_quantity === '-1') {
+            suspTotalQuantity.push('-')
+          } else {
+            suspTotalQuantity.push(i.susp_total_quantity)
+          }
+          if (i.recv_increase_quantity === '-1') {
+            recvUncreaseQuantity.push('-')
+          } else {
+            recvUncreaseQuantity.push(i.recv_increase_quantity)
+          }
+          if (i.recv_total_quantity === '-1') {
+            recvTotalQuantity.push('-')
+          } else {
+            recvTotalQuantity.push(i.recv_total_quantity)
+          }
+          if (i.death_increase_quantity === '-1') {
+            deathIncreaseQuantity.push('-')
+          } else {
+            deathIncreaseQuantity.push(i.death_increase_quantity)
+          }
+          if (i.death_total_quantity === '-1') {
+            deathTotalQuantity.push('-')
+          } else {
+            deathTotalQuantity.push(i.death_total_quantity)
+          }
         }
-        this.newAdd.series[0].data = diag_increase_quantity
-        this.newAdd.series[1].data = susp_increase_quantity
-        this.newAdd.series[2].data = recv_increase_quantity
-        this.newAdd.series[3].data = death_increase_quantity
-        this.total.series[0].data = diag_total_quantity
-        this.total.series[1].data = susp_total_quantity
-        this.total.series[2].data = recv_total_quantity
-        this.total.series[3].data = death_total_quantity
+        this.newAdd.series[0].data = diagincreaseQuantity
+        this.newAdd.series[1].data = suspIncreaseQuantity
+        this.newAdd.series[2].data = recvUncreaseQuantity
+        this.newAdd.series[3].data = deathIncreaseQuantity
+        this.total.series[0].data = diagTotalQuantity
+        this.total.series[1].data = suspTotalQuantity
+        this.total.series[2].data = recvTotalQuantity
+        this.total.series[3].data = deathTotalQuantity
       })
     },
     statsChanged () {
