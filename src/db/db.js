@@ -202,6 +202,10 @@ export const others = {
     {
       name: '疫情小区查询',
       url: 'http://m.bendibao.com/news/xiaoquchaxun/'
+    },
+    {
+      name: '协和防护手册',
+      url: 'http://pumcp.com/portal/sites/xiehe/pages/books/7/index.html'
     }
   ]
 }

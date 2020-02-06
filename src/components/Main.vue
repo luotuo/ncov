@@ -5,16 +5,16 @@
       type="toolList" >
     </block>
     <block
+      :data="others"
+      type="others"
+    ></block>
+    <block
       :data="country"
       type="country"
     ></block>
     <block
       :data="provinceList"
       type="provinceList"
-    ></block>
-    <block
-      :data="others"
-      type="others"
     ></block>
   </div>
 </template>
