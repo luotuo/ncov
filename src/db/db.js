@@ -184,28 +184,32 @@ export const others = {
   title: '其他工具',
   list: [
     {
-      name: '新型冠状病毒感染的肺炎确诊患者同行程查询工具',
-      url: 'http://2019ncov.nosugartech.com/'
-    },
-    {
       name: '疫统计——疫情数据收集统计分析工具',
       url: 'https://www.ioteams.com/ncov#/login'
-    },
-    {
-      name: '【守望相助】人民日报为新型冠状病毒感染肺炎求助者提供求助通道',
-      url: 'https://activity.peopleapp.com/qiuzhutongdao/'
-    },
-    {
-      name: '紧急发布 | 征集感染新冠肺炎求助者信息',
-      url: 'https://jinshuju.net/f/PAMt4O?from=timeline&isappinstalled=0'
     },
     {
       name: '疫情小区查询',
       url: 'http://m.bendibao.com/news/xiaoquchaxun/'
     },
     {
+      name: '腾讯疫情小区查询',
+      url: 'https://ncov.html5.qq.com/community'
+    },
+    {
       name: '协和防护手册',
       url: 'http://pumcp.com/portal/sites/xiehe/pages/books/7/index.html'
+    },
+    {
+      name: '紧急发布 | 征集感染新冠肺炎求助者信息              ',
+      url: 'https://jinshuju.net/f/PAMt4O?from=timeline&isappinstalled=0'
+    },
+    {
+      name: '【守望相助】人民日报为新型冠状病毒感染肺炎求助者提供求助通道',
+      url: 'https://activity.peopleapp.com/qiuzhutongdao/'
+    },
+    {
+      name: '新型冠状病毒感染的肺炎确诊患者同行程查询工具',
+      url: 'http://2019ncov.nosugartech.com/'
     }
   ]
 }
