@@ -198,6 +198,10 @@ export const others = {
     {
       name: '紧急发布 | 征集感染新冠肺炎求助者信息',
       url: 'https://jinshuju.net/f/PAMt4O?from=timeline&isappinstalled=0'
+    },
+    {
+      name: '疫情小区查询',
+      url: 'http://m.bendibao.com/news/xiaoquchaxun/'
     }
   ]
 }
