@@ -129,7 +129,7 @@ export default {
           trigger: 'axis'
         },
         legend: {
-          data: ['确诊增加数量', '疑似增加数量']
+          data: ['确诊增加数量', '疑似增加数量', '确诊+疑似']
         },
         grid: {
           left: '3%',
@@ -163,6 +163,13 @@ export default {
             type: 'line',
             smooth: true,
             stack: '疑似增加数量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '确诊+疑似',
+            type: 'line',
+            smooth: true,
+            stack: '确诊+疑似',
             data: [220, 182, 191, 234, 290, 330, 310]
           }
         ]
@@ -231,7 +238,7 @@ export default {
           trigger: 'axis'
         },
         legend: {
-          data: ['确诊总量', '疑似总量']
+          data: ['确诊总量', '疑似总量', '确诊+疑似']
         },
         grid: {
           left: '3%',
@@ -265,6 +272,13 @@ export default {
             type: 'line',
             smooth: true,
             stack: '疑似总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '确诊+疑似',
+            type: 'line',
+            smooth: true,
+            stack: '确诊+疑似',
             data: [220, 182, 191, 234, 290, 330, 310]
           }
         ]
@@ -361,29 +375,37 @@ export default {
         let recvTotalQuantity = []
         let deathIncreaseQuantity = []
         let deathTotalQuantity = []
+        let diagAndSuspIncreases = []
+        let diagAndSuspTotals = []
         for (const i of result) {
           this.newAdd.xAxis.data.push(i.stat_date)
           this.total.xAxis.data.push(i.stat_date)
           this.newAdd1.xAxis.data.push(i.stat_date)
           this.total1.xAxis.data.push(i.stat_date)
+          let diagAndSuspIncrease = 0
+          let diagAndSuspTotal = 0
           if (i.diag_increase_quantity.slice(0, 1) === '-') {
             diagincreaseQuantity.push('-')
           } else {
+            diagAndSuspIncrease += parseInt(i.diag_increase_quantity)
             diagincreaseQuantity.push(i.diag_increase_quantity)
           }
           if (i.diag_total_quantity.slice(0, 1) === '-') {
             diagTotalQuantity.push('-')
           } else {
+            diagAndSuspTotal += parseInt(i.diag_total_quantity)
             diagTotalQuantity.push(i.diag_total_quantity)
           }
           if (i.susp_increase_quantity.slice(0, 1) === '-') {
             suspIncreaseQuantity.push('-')
           } else {
+            diagAndSuspIncrease += parseInt(i.susp_increase_quantity)
             suspIncreaseQuantity.push(i.susp_increase_quantity)
           }
           if (i.susp_total_quantity.slice(0, 1) === '-') {
             suspTotalQuantity.push('-')
           } else {
+            diagAndSuspTotal += parseInt(i.susp_total_quantity)
             suspTotalQuantity.push(i.susp_total_quantity)
           }
           if (i.recv_increase_quantity.slice(0, 1) === '-') {
@@ -406,13 +428,17 @@ export default {
           } else {
             deathTotalQuantity.push(i.death_total_quantity)
           }
+          diagAndSuspIncreases.push(diagAndSuspIncrease)
+          diagAndSuspTotals.push(diagAndSuspTotal)
         }
         this.newAdd.series[0].data = diagincreaseQuantity
         this.newAdd.series[1].data = suspIncreaseQuantity
+        this.newAdd.series[2].data = diagAndSuspIncreases
         this.newAdd1.series[0].data = recvUncreaseQuantity
         this.newAdd1.series[1].data = deathIncreaseQuantity
         this.total.series[0].data = diagTotalQuantity
         this.total.series[1].data = suspTotalQuantity
+        this.total.series[2].data = diagAndSuspTotals
         this.total1.series[0].data = recvTotalQuantity
         this.total1.series[1].data = deathTotalQuantity
       })
