@@ -196,6 +196,10 @@ export const others = {
       url: 'https://ncov.html5.qq.com/community'
     },
     {
+      name: '周边疫情',
+      url: 'https://z.cbndata.com/2019-nCoV/index.html'
+    },
+    {
       name: '协和防护手册',
       url: 'http://pumcp.com/portal/sites/xiehe/pages/books/7/index.html'
     },
