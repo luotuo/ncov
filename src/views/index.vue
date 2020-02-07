@@ -135,7 +135,7 @@ export default {
     },
     getNcovStats () {
       const dataQuery = {}
-      dataQuery.region_id = '1'
+      dataQuery.region_id = '36'
       dataQuery.start_date = ''
       dataQuery.end_date = ''
       getNcovStats(dataQuery).then(response => {
@@ -154,10 +154,6 @@ export default {
 </script>
 
 <style lang="scss">
-.el-select .el-input {
-  width: 130px;
-}
-
 .input-with-select .el-input-group__prepend {
   background-color: #fff;
 }
