@@ -184,6 +184,10 @@ export const others = {
   title: '其他工具',
   list: [
     {
+      name: '新冠疫情小区',
+      url: 'https://map.wap.qq.com/app/mp/online/h5-epidemic-20200203/OutMapDetail.html?hideBrowserTitle=1'
+    },
+    {
       name: '疫统计——疫情数据收集统计分析工具',
       url: 'https://www.ioteams.com/ncov#/login'
     },
