@@ -92,7 +92,7 @@ export const provinceList = {
     },
     {
       name: '河南',
-      url: 'http://hnwsjsw.gov.cn/channels/854.shtml'
+      url: 'http://hnwsjsw.gov.cn/channels/858.shtml'
     },
     {
       name: '湖北',
@@ -108,7 +108,7 @@ export const provinceList = {
     },
     {
       name: '广西',
-      url: 'http://wsjkw.gxzf.gov.cn/xxgks/yqxx/ssyqdt/'
+      url: 'http://wsjkw.gxzf.gov.cn/zhuantiqu/ncov/ncovyqtb/'
     },
     {
       name: '海南',

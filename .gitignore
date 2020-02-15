@@ -3,3 +3,5 @@ dist
 chrome-extends
 coverage
 .vscode
+.DS_Store
+.zip
