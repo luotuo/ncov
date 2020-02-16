@@ -204,6 +204,10 @@ export const others = {
       url: 'https://z.cbndata.com/2019-nCoV/index.html'
     },
     {
+      name: '新冠肺炎AI自测机器人',
+      url: 'https://health.sogou.com/ncp/robot/'
+    },
+    {
       name: '协和防护手册',
       url: 'http://pumcp.com/portal/sites/xiehe/pages/books/7/index.html'
     },
