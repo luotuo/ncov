@@ -15,7 +15,7 @@
     "build:stage": "vue-cli-service build --mode staging"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
     "vue": "^2.5.2",
